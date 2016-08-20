@@ -32,15 +32,57 @@
                           <block type="procedures_callnoreturn" id="155">
                             <mutation name="left"></mutation>
                             <next>
-                              <block type="delay_custom" id="156" inline="false">
+                              <block type="delay_custom" id="228" inline="false">
                                 <value name="DELAY_TIME">
-                                  <block type="math_number" id="157">
+                                  <block type="math_number" id="229">
                                     <field name="NUM">1000</field>
                                   </block>
                                 </value>
                                 <next>
                                   <block type="procedures_callnoreturn" id="158">
                                     <mutation name="stop"></mutation>
+                                    <next>
+                                      <block type="delay_custom" id="156" inline="false">
+                                        <value name="DELAY_TIME">
+                                          <block type="math_number" id="157">
+                                            <field name="NUM">1000</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="procedures_callnoreturn" id="202">
+                                            <mutation name="left"></mutation>
+                                            <next>
+                                              <block type="delay_custom" id="203" inline="false">
+                                                <value name="DELAY_TIME">
+                                                  <block type="math_number" id="204">
+                                                    <field name="NUM">1000</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="procedures_callnoreturn" id="205">
+                                                    <mutation name="right"></mutation>
+                                                    <next>
+                                                      <block type="delay_custom" id="207" inline="false">
+                                                        <value name="DELAY_TIME">
+                                                          <block type="math_number" id="208">
+                                                            <field name="NUM">1000</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="procedures_callnoreturn" id="227">
+                                                            <mutation name="Freeze"></mutation>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
                                   </block>
                                 </next>
                               </block>
@@ -57,6 +99,35 @@
         </next>
       </block>
     </next>
+  </block>
+  <block type="procedures_defnoreturn" id="141" x="663" y="13">
+    <mutation></mutation>
+    <field name="NAME">stop</field>
+    <comment pinned="false" h="80" w="160">ちょっととまる</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="142">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_digital_write" id="143">
+            <field name="PIN">3</field>
+            <field name="STAT">HIGH</field>
+            <next>
+              <block type="inout_digital_write" id="144">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_digital_write" id="145">
+                    <field name="PIN">5</field>
+                    <field name="STAT">HIGH</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
   </block>
   <block type="procedures_defnoreturn" id="136" x="313" y="38">
     <mutation></mutation>
@@ -87,44 +158,6 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="141" x="663" y="38">
-    <mutation></mutation>
-    <field name="NAME">stop</field>
-    <comment pinned="false" h="80" w="160">とまる</comment>
-    <statement name="STACK">
-      <block type="inout_digital_write" id="142">
-        <field name="PIN">2</field>
-        <field name="STAT">HIGH</field>
-        <next>
-          <block type="inout_digital_write" id="143">
-            <field name="PIN">3</field>
-            <field name="STAT">HIGH</field>
-            <next>
-              <block type="inout_digital_write" id="144">
-                <field name="PIN">4</field>
-                <field name="STAT">HIGH</field>
-                <next>
-                  <block type="inout_digital_write" id="145">
-                    <field name="PIN">5</field>
-                    <field name="STAT">HIGH</field>
-                    <next>
-                      <block type="controls_while" id="183" inline="false">
-                        <value name="BOOL">
-                          <block type="logic_boolean" id="201">
-                            <field name="BOOL">TRUE</field>
-                          </block>
-                        </value>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
   <block type="procedures_defnoreturn" id="161" x="313" y="213">
     <mutation></mutation>
     <field name="NAME">forward</field>
@@ -145,6 +178,44 @@
                   <block type="inout_digital_write" id="165">
                     <field name="PIN">5</field>
                     <field name="STAT">LOW</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="211" x="663" y="213">
+    <mutation></mutation>
+    <field name="NAME">Freeze</field>
+    <comment pinned="false" h="80" w="160">とまる</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="232">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_digital_write" id="233">
+            <field name="PIN">3</field>
+            <field name="STAT">HIGH</field>
+            <next>
+              <block type="inout_digital_write" id="234">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_digital_write" id="235">
+                    <field name="PIN">5</field>
+                    <field name="STAT">HIGH</field>
+                    <next>
+                      <block type="controls_while" id="216" inline="false">
+                        <value name="BOOL">
+                          <block type="logic_boolean" id="217">
+                            <field name="BOOL">TRUE</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>
