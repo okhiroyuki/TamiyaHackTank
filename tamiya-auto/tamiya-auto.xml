@@ -1,0 +1,383 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="initializes_setup" id="58" x="63" y="-187">
+    <statement name="CONTENT">
+      <block type="ultrasonic_setting" id="52">
+        <field name="TRIG">7</field>
+        <field name="ECHO">8</field>
+        <field name="RESET">9</field>
+        <next>
+          <block type="ultrasonic_maxrange" id="56">
+            <field name="MAXRANGE">40</field>
+            <field name="UNIT">CM</field>
+            <next>
+              <block type="variables_set" id="412" inline="true">
+                <field name="TYPE">Number</field>
+                <field name="VAR">n</field>
+                <value name="VALUE">
+                  <block type="math_number" id="448">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="240" inline="true">
+                    <field name="TYPE">Number</field>
+                    <field name="VAR">lr</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="265">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="controls_if" id="68" inline="false">
+        <mutation else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="84" inline="true">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="ultrasonic_distance" id="62">
+                <field name="UNIT">CM</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="99">
+                <field name="NUM">20</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="procedures_callnoreturn" id="112">
+            <mutation name="stop"></mutation>
+            <next>
+              <block type="controls_if" id="271" inline="false">
+                <mutation else="1"></mutation>
+                <value name="IF0">
+                  <block type="logic_compare" id="301" inline="true">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="308">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">lr</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="342">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="procedures_callnoreturn" id="4">
+                    <mutation name="right"></mutation>
+                    <next>
+                      <block type="variables_set" id="398" inline="true">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">lr</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="399">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <statement name="ELSE">
+                  <block type="procedures_callnoreturn" id="10">
+                    <mutation name="left"></mutation>
+                    <next>
+                      <block type="variables_set" id="400" inline="true">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">lr</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="401">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="delay_custom" id="11" inline="false">
+                    <value name="DELAY_TIME">
+                      <block type="math_arithmetic" id="347" inline="true">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <block type="math_number" id="348">
+                            <field name="NUM">2000</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="variables_get" id="421">
+                            <field name="TYPE">Number</field>
+                            <field name="VAR">n</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="489" inline="true">
+                        <field name="TYPE">Number</field>
+                        <field name="VAR">n</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="361" inline="true">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <block type="variables_get" id="438">
+                                <field name="TYPE">Number</field>
+                                <field name="VAR">n</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="math_number" id="397">
+                                <field name="NUM">1</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="procedures_callnoreturn" id="143">
+                            <mutation name="stop"></mutation>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="variables_set" id="402" inline="true">
+            <field name="TYPE">Number</field>
+            <field name="VAR">lr</field>
+            <value name="VALUE">
+              <block type="math_number" id="403">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="447" inline="true">
+                <field name="TYPE">Number</field>
+                <field name="VAR">n</field>
+                <value name="VALUE">
+                  <block type="math_number" id="405">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="procedures_callnoreturn" id="7">
+                    <mutation name="forward"></mutation>
+                    <next>
+                      <block type="delay_custom" id="8" inline="false">
+                        <value name="DELAY_TIME">
+                          <block type="math_number" id="9">
+                            <field name="NUM">100</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn" id="22" x="663" y="-162">
+    <mutation></mutation>
+    <field name="NAME">back</field>
+    <comment pinned="false" h="80" w="160">うしろにすすむ</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="23">
+        <field name="PIN">2</field>
+        <field name="STAT">LOW</field>
+        <next>
+          <block type="inout_digital_write" id="24">
+            <field name="PIN">3</field>
+            <field name="STAT">HIGH</field>
+            <next>
+              <block type="inout_digital_write" id="25">
+                <field name="PIN">4</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="inout_digital_write" id="26">
+                    <field name="PIN">5</field>
+                    <field name="STAT">HIGH</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="17" x="663" y="13">
+    <mutation></mutation>
+    <field name="NAME">stop</field>
+    <comment pinned="false" h="80" w="160">ちょっととまる</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="18">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_digital_write" id="19">
+            <field name="PIN">3</field>
+            <field name="STAT">HIGH</field>
+            <next>
+              <block type="inout_digital_write" id="20">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_digital_write" id="21">
+                    <field name="PIN">5</field>
+                    <field name="STAT">HIGH</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="32" x="663" y="213">
+    <mutation></mutation>
+    <field name="NAME">Freeze</field>
+    <comment pinned="false" h="80" w="160">とまる</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="33">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_digital_write" id="34">
+            <field name="PIN">3</field>
+            <field name="STAT">HIGH</field>
+            <next>
+              <block type="inout_digital_write" id="35">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_digital_write" id="36">
+                    <field name="PIN">5</field>
+                    <field name="STAT">HIGH</field>
+                    <next>
+                      <block type="controls_while" id="37" inline="false">
+                        <value name="BOOL">
+                          <block type="logic_boolean" id="38">
+                            <field name="BOOL">TRUE</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="27" x="663" y="438">
+    <mutation></mutation>
+    <field name="NAME">forward</field>
+    <comment pinned="false" h="80" w="160">まえにすすむ</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="28">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_digital_write" id="29">
+            <field name="PIN">3</field>
+            <field name="STAT">LOW</field>
+            <next>
+              <block type="inout_digital_write" id="30">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_digital_write" id="31">
+                    <field name="PIN">5</field>
+                    <field name="STAT">LOW</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="44" x="313" y="588">
+    <mutation></mutation>
+    <field name="NAME">left</field>
+    <comment pinned="false" h="80" w="160">ひだりにまがる</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="45">
+        <field name="PIN">2</field>
+        <field name="STAT">LOW</field>
+        <next>
+          <block type="inout_digital_write" id="46">
+            <field name="PIN">3</field>
+            <field name="STAT">HIGH</field>
+            <next>
+              <block type="inout_digital_write" id="47">
+                <field name="PIN">4</field>
+                <field name="STAT">HIGH</field>
+                <next>
+                  <block type="inout_digital_write" id="48">
+                    <field name="PIN">5</field>
+                    <field name="STAT">LOW</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="39" x="663" y="613">
+    <mutation></mutation>
+    <field name="NAME">right</field>
+    <comment pinned="false" h="80" w="160">みぎにまがる</comment>
+    <statement name="STACK">
+      <block type="inout_digital_write" id="40">
+        <field name="PIN">2</field>
+        <field name="STAT">HIGH</field>
+        <next>
+          <block type="inout_digital_write" id="41">
+            <field name="PIN">3</field>
+            <field name="STAT">LOW</field>
+            <next>
+              <block type="inout_digital_write" id="42">
+                <field name="PIN">4</field>
+                <field name="STAT">LOW</field>
+                <next>
+                  <block type="inout_digital_write" id="43">
+                    <field name="PIN">5</field>
+                    <field name="STAT">HIGH</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
