@@ -9,7 +9,7 @@
 # 戦車ロボの構成部品
 [部品リスト]
 
-リストの一覧は、(https://docs.google.com/spreadsheets/d/1GFMyF7QKVoaPNvtzkHuXjzPc7Tc-55D2XxNh2L3xb0M/edit?usp=sharing)にまとめています。
+リストの一覧は、[こちら](https://docs.google.com/spreadsheets/d/1GFMyF7QKVoaPNvtzkHuXjzPc7Tc-55D2XxNh2L3xb0M/edit?usp=sharing)にまとめています。
 
 ## ベース
 戦車を上下させるだけなら、通常の [タミヤ 楽しい工作シリーズ No.108 タンク工作基本セット ](http://amzn.to/2cnUZjh) で事足りますが、ロボットプログラミングを楽しむためには、ダブルギアにして左右に動かせるようにする必要があります。
