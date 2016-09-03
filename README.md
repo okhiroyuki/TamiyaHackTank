@@ -7,7 +7,9 @@
 - Image：戦車ロボの各種画像
 
 # 戦車ロボの構成部品
-[部品リスト](https://docs.google.com/spreadsheets/d/1GFMyF7QKVoaPNvtzkHuXjzPc7Tc-55D2XxNh2L3xb0M/edit?usp=sharing)にまとめています。
+[部品リスト]
+
+リストの一覧は、(https://docs.google.com/spreadsheets/d/1GFMyF7QKVoaPNvtzkHuXjzPc7Tc-55D2XxNh2L3xb0M/edit?usp=sharing)にまとめています。
 
 ## ベース
 戦車を上下させるだけなら、通常の [タミヤ 楽しい工作シリーズ No.108 タンク工作基本セット ](http://amzn.to/2cnUZjh) で事足りますが、ロボットプログラミングを楽しむためには、ダブルギアにして左右に動かせるようにする必要があります。
@@ -58,6 +60,7 @@ Arduinoは、モバイルバッテリーなどで電源を供給すればOKで�
 もし、購入されるなら、永久保証のつくスイッチサイエンスさんで購入されることをオススメします。
 
 - [Arduino Uno](http://amzn.to/2bK1YOV) ✕ 1
+
 # 組み立て方法
 下記の図面とこちらの[写真](https://goo.gl/photos/RhmUzpuK7QpetXwV8)を参考に組み立ててみてください。
 
