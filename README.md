@@ -4,7 +4,7 @@
 ## レポジトリの中身
 - SampleCode：ArduinoとBlocklyDuinoのサンプルコードが入っています
 - Circuit：モータードライバとArduinoの接続に関する回路データが入っています
-- Image：TamiyaHackTankの各種画像が入っています
+- Image：文章内の画像が入ってます。
 
 ## 作り方
 
