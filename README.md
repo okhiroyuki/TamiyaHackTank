@@ -1,7 +1,7 @@
 # TamiyaHackTank
 タミヤが販売しているタンクキットを使って、Arduinoでモーター制御できるようにしたタンクの作り方やArduinoのサンプルコードを紹介しています。
 
-![TamiyaHackTank](./Image/TamiyaHackTank.jpg)
+![TamiyaHackTank](./Image/tamiyahacktank.jpg)
 
 ## レポジトリの中身
 - SampleCode：ArduinoとBlocklyDuinoのサンプルコードが入っています
