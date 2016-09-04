@@ -8,7 +8,7 @@
 
 ## 作り方
 
-1. 部品リストを参考に、必要な部品を揃えます。
+1. [部品リスト](https://docs.google.com/spreadsheets/d/1GFMyF7QKVoaPNvtzkHuXjzPc7Tc-55D2XxNh2L3xb0M/edit?usp=sharing)を参考に、必要な部品を揃えます。
 2. 商品説明書を参考に、ダブルギアボックスを作成します。
 3. ユニバーサルプレートLをニッパでカットします。
 4. ダブルギアボックスとホイール、電池ボックスなどをプレートに固定します。
